@@ -16,11 +16,10 @@ const human = require('./img/human.png')
 const alien = require('./img/alien.png')
 
 const intervalLength = 50
-const maxSeconds = 15 //TODO
+const maxSeconds = 30 //TODO
 const maxTicks = maxSeconds * 1000 / intervalLength
 
 class Timer extends Component {
-
   constructor (props) {
     super(props)
     this.state = this.initialState()
@@ -145,7 +144,7 @@ class zadanie2 extends Component {
         </View>
         <Text style={styles.label} > Humans killed: {this.state.humansKilled} </Text>
         <Text style={styles.label} > Aliens killed: {this.state.aliensKilled} </Text>
-        <Button title='RESPAWN' onPress={this.resetHoles} style={{bottom:0}}/>
+        <Button title='RESPAWN' onPress={this.resetHoles} />
       </View>
     )
   }
