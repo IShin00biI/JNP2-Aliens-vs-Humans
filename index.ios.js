@@ -74,8 +74,10 @@ class zadanie2 extends Component {
       "You've run out of time, start over\n\n" +
       this.state.humansKilled + ' humans killed\n' +
       this.state.aliensKilled + ' aliens killed',
-      [ { text: 'RESET', onPress: this.resetGame },
-      { text: 'debugCANCEL', onPress: () => {} } ],
+      [ { text: 'RESET', onPress: this.resetGame }
+//        Add this line to enable alert cancel button for debugging
+//        , { text: 'debugCANCEL', onPress: () => {} }
+      ],
       { cancelable: false }
     )
   }

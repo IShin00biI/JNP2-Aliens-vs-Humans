@@ -6,8 +6,13 @@ import {
   styles
 } from '../styles/styles'
 
-export const intervalLength = 50
+// Modifiable
+// Time between timer refreshing
+export const intervalLength = 50 // in miliseconds
+// Starting time left of timer
 export const maxSeconds = 30
+
+// Don't modify without adjusting rest of the code!
 export const maxTicks = maxSeconds * 1000 / intervalLength
 
 export class Timer extends Component {
