@@ -14,8 +14,21 @@ const randomIntegerBetween = (min, max) => {
   return Math.random() * (max - min) + min
 }
 
-export const human = require('../img/human.png')
-export const alien = require('../img/alien.png')
+export let human
+export let alien
+
+// Very important feature I came up with at the end
+export const enableSecretLevel = () => {
+  human = require('../img/panEngel.jpeg')
+  alien = require('../img/panPeczarski.jpg')
+}
+
+export const disableSecretLevel = () => {
+  human = require('../img/human.png')
+  alien = require('../img/alien.png')
+}
+
+disableSecretLevel()
 
 export class Hole extends Component {
   constructor (props) {

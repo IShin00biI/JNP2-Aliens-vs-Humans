@@ -10,7 +10,7 @@ import {
   intervalLength, Timer
 } from './components/timer'
 import {
-  Hole, human
+  Hole, human, enableSecretLevel, disableSecretLevel
 } from './components/hole'
 
 class zadanie2 extends Component {
@@ -64,6 +64,9 @@ class zadanie2 extends Component {
     const newState = Object.assign({}, this.state)
     if (unit === human) newState.humansKilled++
     else newState.aliensKilled++
+    if (newState.humansKilled === 7 && newState.aliensKilled === 9) {
+      enableSecretLevel()
+    }
     this.setState(newState)
   }
 
@@ -83,6 +86,7 @@ class zadanie2 extends Component {
   }
 
   resetGame = () => {
+    disableSecretLevel()
     this.resetHoles()
     this.refs.timer.resetTimer()
     this.setState(this.initialState())
